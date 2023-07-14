@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caculadora</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="javaScript/cotizacion.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="imgs/logo.png" alt="">
+    </header>
+    <main>
+        <section class="cotizacion">
+            <section class="star">
+                <div class="accion">
+                    <button onclick="regreso()" class="enter" id="regreso"><i
+                            class="fa-sharp fa-solid fa-arrow-left"></i></button>
+                </div>
+                <div class="logo">
+                    <img src="imgs/logo.png" alt="">
+                </div>
+                <div class="buttons">
+                    <div class="accion">
+                        <button onclick="individual()" class="enter">Sin Equipo</button>
+                    </div>
+                    <div class="accion">
+                        <button onclick="grupal()" class="enter">Con Equipo</button>
+                    </div>
+                </div>
+                <section class="calcular">
+                    <section class="individual">
+                        <section class="form-section" id="contrato1">
+                            <div class="form-container">
+                                <div class="form-group">
+                                    <input type="text" id="invertion" class="inversion1" placeholder=""
+                                        onkeyup="formatNumber1(this.value)" maxlength="100">
+                                    <label for="invertion" class="form-label-input">Inversión Pricipal</label>
+                                    <span class="form-line"></span>
+                                </div>
+                            </div>
+                            <div class="form-container">
+                                <div class="form-com" id="mostrar1">
+                                    <input type="text" id="name" class="invercion_porcentual1" placeholder="0" readonly
+                                        disabled>
+                                    <label for="name" class="form_label">Tasa E.M</label>
+                                </div>
+                            </div>
+                            <div class="form-container">
+                                <div class="form-group" id="dias_habilitados">
+                                    <select name="Contrato" id="name" class="selecion_dias1" onchange="selection">
+                                        <option value=""></option>
+                                        <option value="12">12</option>
+                                        <option value="18">18</option>
+                                    </select>
+                                    <label for="name" class="form_label">Contrato</label>
+                                </div>
+                                <div class="form-group" style="display: none;">
+                                    <input type="text" id="name" class="dias_habilitados" placeholder="0" readonly
+                                        disabled>
+                                    <label for="name" class="form_label">Dias habilitados</label>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="resultados1" id="hr"></section>
+                        <section class="resultados1" id="contrato">
+                            <div class="parrafo">
+                                <h3>Liquidacion Mensual</h3>
+                            </div>
+                            <div class="form-container" id="form-container1">
+                                <div class="form-group" id="arreglo">
+                                    <input type="text" id="name" class="capital1" placeholder="0.00" readonly disabled>
+                                    <label for="name" class="form_label">Capital</label>
+                                </div>
+                            </div>
+                            <div class="form-container" id="form-container1">
+                                <div class="form-group" id="arreglo">
+                                    <input type="text" id="name" class="interes1" placeholder="0.00" readonly disabled>
+                                    <label for="name" class="form_label">Interes</label>
+                                </div>
+                            </div>
+                            <div class="form-container" id="form-container1">
+                                <div class="form-group">
+                                    <input type="text" id="name" class="capital-mensual" placeholder="0.00" readonly
+                                        disabled>
+                                    <label for="name" class="form_label">Liquidacion mensual</label>
+                                </div>
+                            </div>
+                            <div class="form-container" id="form-container1">
+                                <div class="form-group">
+                                    <input type="text" id="name" class="Total-contato" placeholder="0.00" readonly
+                                        disabled>
+                                    <label for="name" class="form_label">Total liquidacion Contrato</label>
+                                </div>
+                            </div>
+                        </section>
+                        <div class="p">
+                            <p> <strong>Nota: </strong>las ordenes de retiros estaran habilitados los dias 10 - 20 - 30
+                                de cada mes costo del retiro que se realice tendra una retencion de 3,2% </p>
+                        </div>
+                        <div class="button1">
+                            <div class="accion">
+                                <button onclick="calcular1()" class="enter">calcular</button>
+                            </div>
+                        </div>
+                        <div class="button-volver1">
+                            <div class="accion">
+                                <button onclick="VolverCalcular1()" id="re-calcular" class="enter">Volver a
+                                    calcular</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="grupal">
+                        <section class="form-section" id="contrato1">
+                            <div class="form-container">
+                                <div class="form-group">
+                                    <input type="text" id="invertion" class="inversion" placeholder=""
+                                        onkeyup="formatNumber(this.value)" maxlength="100">
+                                    <label for="invertion" class="form-label-input">Inversión Pricipal</label>
+                                    <span class="form-line"></span>
+                                </div>
+                                <div class="form-com" id="mostrar">
+                                    <input type="text" id="name" class="invercion_porcentual" placeholder="0" readonly
+                                        disabled>
+                                    <label for="name" class="form_label">% Rentabilidad mensual</label>
+                                </div>
+                            </div>
+                            <div class="form-container">
+                                <div class="form-group">
+                                    <input type="text" id="Activo_global" class="global" placeholder=""
+                                        onkeyup="formatNumber2(this.value)" maxlength="100">
+                                    <label for="Activo_global" class="form-label-input">Bono Global</label>
+                                    <span class="form-line"></span>
+                                </div>
+                                <div class="form-com" id="mostrar">
+                                    <input type="text" id="name" class="global_porcentual" placeholder="0" readonly
+                                        disabled>
+                                    <label for="name" class="form_label">% Rentabilidad global</label>
+                                </div>
+                            </div>
+                            <div class="form-container">
+                                <div class="form-group" id="dias_habilitados">
+                                    <select name="Contrato" id="name" class="selecion_dias" onchange="selection">
+                                        <option value=""></option>
+                                        <option value="12">12</option>
+                                        <option value="18">18</option>
+                                    </select>
+                                    <label for="name" class="form_label">Contrato</label>
+                                </div>
+                                <div class="form-group" style="display: none;">
+                                    <input type="text" id="name" class="dias_habilitados" placeholder="0" readonly
+                                        disabled>
+                                    <label for="name" class="form_label">Dias habilitados</label>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="resultados" id="hr"></section>
+                        <section class="resultados" id="contrato">
+                            <div class="form-container" id="margin">
+                                <div class="form-group">
+                                    <input type="text" id="name" class="interes_contrato_mensual" placeholder="0.00"
+                                        readonly disabled>
+                                    <label for="name" class="form_label">Rentabilidad principal total </label>
+                                </div>
+                            </div>
+                            <div class="form-container" id="margin">
+                                <div class="form-group">
+                                    <input type="text" id="name" class="interes_contrato_mensual_global"
+                                        placeholder="0.00" readonly disabled>
+                                    <label for="name" class="form_label">Comision Global Total</label>
+                                </div>
+                            </div>
+                            <div class="form-container" id="margin">
+                                <div class="form-group">
+                                    <input type="text" id="name" class="Pago_total_beneficios_mesual" placeholder="0.00"
+                                        readonly disabled>
+                                    <label for="name" class="form_label">Total Rendimiento</label>
+                                </div>
+                            </div>
+                            <div class="form-container" id="margin">
+                                <div class="form-group">
+                                    <input type="text" id="name" class="total_beneficios_contrato" placeholder="0.00"
+                                        readonly disabled>
+                                    <label for="name" class="form_label">Total Rentabilidad mas Inversion</label>
+                                </div>
+
+                            </div>
+                        </section>
+                        <section class="resultados" id="contrato">
+                            <div class="parrafo">
+                                <h3>Liquidacion Mensual</h3>
+                            </div>
+                            <div class="form-container" id="form-container">
+                                <div class="form-group" id="arreglo">
+                                    <input type="text" id="name" class="capital" placeholder="0.00" readonly disabled>
+                                    <label for="name" class="form_label">Capital</label>
+                                </div>
+                            </div>
+                            <div class="form-container" id="form-container">
+                                <div class="form-group" id="arreglo">
+                                    <input type="text" id="name" class="interes" placeholder="0.00" readonly disabled>
+                                    <label for="name" class="form_label">Interes Principal</label>
+                                </div>
+                            </div>
+                            <div class="form-container" id="form-container">
+                                <div class="form-group">
+                                    <input type="text" id="name" class="global_res" placeholder="0.00" readonly
+                                        disabled>
+                                    <label for="name" class="form_label">Global</label>
+                                </div>
+                            </div>
+                            <div class="form-container" id="form-container">
+                                <div class="form-group">
+                                    <input type="text" id="name" class="sub_total" placeholder="0.00" readonly disabled>
+                                    <label for="name" class="form_label">Total liquidacion mensual</label>
+                                </div>
+                            </div>
+                        </section>
+                        <div class="p">
+                            <p> <strong>Nota: </strong>las ordenes de retiros estaran habilitados los dias 10 - 20 - 30
+                                de cada mes costo del retiro que se realice tendra una retencion de 3,2% </p>
+                        </div>
+                        <div class="button">
+                            <div class="accion">
+                                <button onclick="calcular()" class="enter">calcular</button>
+                            </div>
+                        </div>
+                        <div class="button-volver">
+                            <div class="accion">
+                                <button onclick="VolverCalcular()" id="re-calcular" class="enter">Volver a
+                                    calcular</button>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+            </section>
+    </main>
+</body>
+
+</html>
